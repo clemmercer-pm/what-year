@@ -1,0 +1,198 @@
+/* WHAT YEAR?? — Session 2 core loop styles. Mobile-first, clean, legible. */
+
+:root {
+  --bg: #f4f1ea;
+  --card: #ffffff;
+  --ink: #1d2333;
+  --muted: #6b7280;
+  --line: #e4e0d6;
+  --accent: #2f6f4f;      /* deep green */
+  --accent-ink: #ffffff;
+  --early: #c2673b;       /* too early (aim later)  */
+  --late: #3b74c2;        /* too late  (aim earlier)*/
+  --warm: #d9a441;        /* right decade */
+  --win: #2f8f57;
+  --lock: #9aa0ab;
+  --radius: 14px;
+  --shadow: 0 2px 10px rgba(29, 35, 51, .06), 0 1px 3px rgba(29, 35, 51, .08);
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; } /* ensure the HTML hidden attribute wins over element display rules */
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 3rem;
+}
+
+/* Masthead */
+.masthead { text-align: center; margin: .5rem 0 1.25rem; }
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+.logo .q { color: var(--accent); }
+.tagline { color: var(--muted); margin: .35rem 0 0; font-size: .95rem; }
+
+/* Clues */
+.clues { display: flex; flex-direction: column; gap: .6rem; margin-bottom: 1.1rem; }
+.clue {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: .85rem 1rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: .7rem;
+  align-items: flex-start;
+}
+.clue .n {
+  flex: 0 0 auto;
+  width: 1.6rem; height: 1.6rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  font-size: .85rem;
+  display: grid; place-items: center;
+}
+.clue .body { flex: 1; }
+.clue .kind {
+  text-transform: uppercase;
+  font-size: .68rem;
+  letter-spacing: .06em;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: .15rem;
+}
+.clue .text { font-size: 1rem; line-height: 1.4; }
+
+.clue.locked {
+  background: transparent;
+  border-style: dashed;
+  box-shadow: none;
+  align-items: center;
+}
+.clue.locked .n { background: var(--lock); }
+.clue.locked .text { color: var(--lock); font-style: italic; }
+
+/* Guess bar */
+.guessbar {
+  display: flex;
+  gap: .5rem;
+  align-items: stretch;
+  margin-bottom: .5rem;
+}
+.era-toggle {
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--card);
+}
+.era {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 700;
+  padding: 0 .7rem;
+  cursor: pointer;
+  font-size: .95rem;
+}
+.era.is-active { background: var(--accent); color: var(--accent-ink); }
+
+.year-input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: .7rem .9rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  background: var(--card);
+  color: var(--ink);
+}
+.year-input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+/* hide number spinners */
+.year-input::-webkit-outer-spin-button,
+.year-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.year-input[type=number] { -moz-appearance: textfield; }
+
+.guess-btn {
+  border: 0;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.guess-btn:disabled { opacity: .45; cursor: default; }
+
+.hint {
+  min-height: 1.2rem;
+  margin: .1rem 0 .8rem;
+  font-size: .9rem;
+  color: var(--early);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* History */
+.history { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .4rem; }
+.guess-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: .55rem .85rem;
+  box-shadow: var(--shadow);
+}
+.guess-row .yr { font-weight: 700; font-size: 1.05rem; }
+.guess-row .fb { font-size: .9rem; font-weight: 600; display: flex; align-items: center; gap: .4rem; }
+.guess-row.early .fb { color: var(--early); }
+.guess-row.late  .fb { color: var(--late); }
+.guess-row.win   { border-color: var(--win); background: #eaf6ef; }
+.guess-row.win .fb { color: var(--win); }
+.decade-tag {
+  font-size: .68rem;
+  font-weight: 700;
+  color: #7a5b12;
+  background: #fbf0d3;
+  border: 1px solid #f0dca0;
+  padding: .05rem .4rem;
+  border-radius: 999px;
+}
+
+/* End screen */
+.endscreen {
+  margin-top: 1.25rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.15rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.endscreen h2 { margin: 0 0 .2rem; font-size: 1.3rem; }
+.endscreen .answer { font-size: 2rem; font-weight: 800; color: var(--accent); margin: .3rem 0 .8rem; }
+.endscreen .reveals { text-align: left; display: flex; flex-direction: column; gap: .5rem; margin-top: .6rem; }
+.endscreen .reveals li { list-style: none; font-size: .92rem; line-height: 1.4; padding-left: 1.4rem; position: relative; }
+.endscreen .reveals li::before { content: attr(data-n); position: absolute; left: 0; font-weight: 800; color: var(--accent); }
+.endscreen .placeholder { margin-top: 1rem; color: var(--muted); font-size: .85rem; font-style: italic; }
+
+.foot { text-align: center; color: var(--muted); font-size: .82rem; margin-top: 1rem; }

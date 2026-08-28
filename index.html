@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WHAT YEAR??</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="masthead">
+      <h1 class="logo">WHAT YEAR<span class="q">??</span></h1>
+      <p class="tagline">Three things. One year. Name it.</p>
+    </header>
+
+    <!-- Clues -->
+    <section class="clues" id="clues" aria-label="Clues"></section>
+
+    <!-- Guess input -->
+    <section class="guessbar" id="guessbar">
+      <div class="era-toggle" role="group" aria-label="Era">
+        <button type="button" class="era" data-era="BC">BC</button>
+        <button type="button" class="era is-active" data-era="AD" aria-pressed="true">AD</button>
+      </div>
+      <input
+        id="yearInput"
+        class="year-input"
+        type="number"
+        inputmode="numeric"
+        min="1"
+        placeholder="Year"
+        aria-label="Your year guess"
+        autocomplete="off">
+      <button type="button" id="guessBtn" class="guess-btn">Guess</button>
+    </section>
+
+    <p class="hint" id="hint" role="status" aria-live="polite"></p>
+
+    <!-- Guess history -->
+    <ol class="history" id="history" aria-label="Your guesses"></ol>
+
+    <!-- End screen -->
+    <section class="endscreen" id="endscreen" hidden></section>
+
+    <footer class="foot">
+      <span id="guessCount"></span>
+    </footer>
+  </main>
+
+  <script src="puzzles.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
