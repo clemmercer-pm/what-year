@@ -44,6 +44,7 @@ html, body {
 }
 .logo .q { color: var(--accent); }
 .tagline { color: var(--muted); margin: .35rem 0 0; font-size: .95rem; }
+.puzznum { color: var(--lock); margin: .35rem 0 0; font-size: .78rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; }
 
 /* Clues */
 .clues { display: flex; flex-direction: column; gap: .6rem; margin-bottom: 1.1rem; }
