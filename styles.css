@@ -78,6 +78,16 @@ html, body {
   margin-bottom: .15rem;
 }
 .clue .text { font-size: 1rem; line-height: 1.4; }
+.clue-fig { margin: .6rem 0 0; }
+.clue-fig img {
+  display: block;
+  width: 100%;
+  max-height: 15rem;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+.clue-fig figcaption { font-size: .7rem; color: var(--muted); margin-top: .3rem; text-align: right; }
 
 .clue.locked {
   background: transparent;

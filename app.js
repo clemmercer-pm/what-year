@@ -131,6 +131,25 @@
         text.className = 'text';
         text.textContent = clue.text; // textContent = no HTML injection
         body.append(kind, text);
+
+        // Optional image/map. Degrades gracefully: if the file is missing or
+        // fails to load, we drop the figure and keep the text clue.
+        if (clue.image) {
+          const fig = document.createElement('figure');
+          fig.className = 'clue-fig';
+          const img = document.createElement('img');
+          img.src = clue.image;
+          img.alt = clue.alt || '';
+          img.loading = 'lazy';
+          img.addEventListener('error', () => fig.remove());
+          fig.appendChild(img);
+          if (clue.attribution) {
+            const cap = document.createElement('figcaption');
+            cap.textContent = clue.attribution; // textContent = safe
+            fig.appendChild(cap);
+          }
+          body.appendChild(fig);
+        }
       } else {
         const text = document.createElement('div');
         text.className = 'text';
