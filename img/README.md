@@ -13,6 +13,9 @@ A deliberately strict, maintainable bright line so the content set can be stocke
 |------|--------|----------|---------------|---------|
 | `bastille.jpg` | 1789 | Storming of the Bastille | Jean-Pierre Houël (1789) | Public domain |
 | `great-fire-london.jpg` | 1666 | The Great Fire of London | Unknown (c.1675) | Public domain |
+| `coronation-1804.jpg` | 1804 | The Coronation of Napoleon | Jacques-Louis David (1807) | Public domain |
+| `liberty-1830.jpg` | 1830 | Liberty Leading the People | Eugène Delacroix (1830) | Public domain |
+| `sunflowers-1888.jpg` | 1888 | Sunflowers | Vincent van Gogh (1888) | Public domain |
 
 _Fetched at 800px via Commons `Special:FilePath/<File>?width=800` (≈130–210 KB each). If a file is ever missing, the clue falls back to text — the game does not break._
 
