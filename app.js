@@ -53,6 +53,8 @@
   const puzzle = PUZZLES[puzzleIndex];
 
   const STORE_KEY = `whatyear:progress:${dateKey}`;
+  // Provisional GitHub Pages URL — confirm/finalise at deploy (Session 6 checklist).
+  const SHARE_URL = 'https://clemmercer-pm.github.io/what-year/';
 
   // --- state ---
   const state = {
@@ -81,6 +83,41 @@
         state.won = !!s.won;
       }
     } catch (e) { /* ignore corrupt/missing */ }
+  }
+
+  // --- share (spoiler-free: reveals your hunt, never the year or the events) ---
+  function guessGlyph(g) {
+    if (g.result === 'win') return '🟩';   // correct
+    if (g.sameDecade) return '🟨';          // right decade, wrong year
+    return g.result === 'early' ? '⬆️' : '⬇️'; // ⬆️ too early / ⬇️ too late
+  }
+  // Clues that were showing when the deciding guess was made (unlock on guesses 3 & 5).
+  function cluesUsed() {
+    return Math.min(puzzle.clues.length, 1 + Math.floor((state.guesses.length - 1) / 2));
+  }
+  function buildShareText() {
+    const score = state.won ? `${state.guesses.length}/${MAX_GUESSES}` : `X/${MAX_GUESSES}`;
+    const mark = state.won ? '✅' : '❌';
+    const grid = state.guesses.map(guessGlyph).join('');
+    return `WHAT YEAR?? No.${puzzleNumber} — ${score} ${mark}\n${grid}\n🔎 ${cluesUsed()}/${puzzle.clues.length} clues\n${SHARE_URL}`;
+  }
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text);
+    }
+    // Fallback for older / mobile browsers without the async clipboard API.
+    return new Promise((resolve, reject) => {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.top = '-1000px';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); resolve(); }
+      catch (e) { reject(e); }
+      finally { document.body.removeChild(ta); }
+    });
   }
 
   // --- helpers ---
@@ -222,11 +259,35 @@
       reveals.appendChild(li);
     });
 
-    const ph = document.createElement('p');
-    ph.className = 'placeholder';
-    ph.textContent = 'Share card + streak land in Session 5. Come back tomorrow for a new one.';
+    // Spoiler-free share
+    const share = document.createElement('div');
+    share.className = 'share';
+    const grid = document.createElement('div');
+    grid.className = 'share-grid';
+    grid.textContent = state.guesses.map(guessGlyph).join('');
+    const cluesLine = document.createElement('div');
+    cluesLine.className = 'share-clues';
+    cluesLine.textContent = `🔎 ${cluesUsed()}/${puzzle.clues.length} clues`;
+    const copyBtn = document.createElement('button');
+    copyBtn.type = 'button';
+    copyBtn.className = 'copy-btn';
+    copyBtn.textContent = 'Copy result';
+    const copyNote = document.createElement('span');
+    copyNote.className = 'copy-note';
+    copyNote.setAttribute('role', 'status');
+    copyNote.setAttribute('aria-live', 'polite');
+    copyBtn.addEventListener('click', () => {
+      copyText(buildShareText())
+        .then(() => { copyNote.textContent = 'Copied — paste it into the group chat!'; })
+        .catch(() => { copyNote.textContent = 'Couldn’t copy automatically — long-press to select.'; });
+    });
+    share.append(grid, cluesLine, copyBtn, copyNote);
 
-    el.endscreen.append(h2, ans, reveals, ph);
+    const tomorrow = document.createElement('p');
+    tomorrow.className = 'placeholder';
+    tomorrow.textContent = 'Come back tomorrow for a new one.';
+
+    el.endscreen.append(h2, ans, reveals, share, tomorrow);
   }
 
   function render() {
