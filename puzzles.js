@@ -1,23 +1,23 @@
-// WHAT YEAR?? — puzzle data
+// WHAT YEAR?? - puzzle data
 // Session 4: the curated set (batch 1 = 16), fact-checked with Clem.
 // Schema (locked in SPEC.md): each clue is its own object so types can mix,
 // ordered hard -> easy by obscurity. `reveal` = one line per clue (answer screen).
 // A clue MAY also carry an image/map: add `image` (path under img/), `alt`
 // (screen-reader text), and `attribution` (shown as a caption). If the file is
-// missing, the clue falls back to text-only — the game never breaks.
+// missing, the clue falls back to text-only - the game never breaks.
 
 const PUZZLES = [
   {
     id: 1, year: 1969, era: 'AD',
     clues: [
-      { type: 'work',   text: 'A new children’s TV show — Sesame Street — airs its very first episode in the United States.' },
+      { type: 'work',   text: 'A new children’s TV show - Sesame Street - airs its very first episode in the United States.' },
       { type: 'person', text: 'Born this year: the actor Matthew McConaughey and the rapper Jay-Z.' },
       { type: 'event',  text: 'Apollo 11 lands the first humans on the Moon.' },
     ],
     reveal: [
       'Sesame Street premiered on 10 November 1969.',
       'Matthew McConaughey (4 Nov) and Jay-Z (4 Dec) were both born in 1969.',
-      'Apollo 11 — Armstrong and Aldrin walked on the Moon on 20 July 1969.',
+      'Apollo 11 - Armstrong and Aldrin walked on the Moon on 20 July 1969.',
     ],
   },
   {
@@ -28,7 +28,7 @@ const PUZZLES = [
       { type: 'event',  text: 'A Paris mob storms the Bastille, igniting the French Revolution.',
         image: 'img/bastille.jpg',
         alt: 'A crowd of armed figures storming the Bastille fortress in Paris amid smoke.',
-        attribution: 'Storming of the Bastille, Jean-Pierre Houël (1789) — public domain' },
+        attribution: 'Storming of the Bastille, Jean-Pierre Houël (1789) - public domain' },
     ],
     reveal: [
       'James Fenimore Cooper was born on 15 September 1789.',
@@ -41,7 +41,7 @@ const PUZZLES = [
     clues: [
       { type: 'person', text: 'Born this year: Kublai Khan, a future emperor of the Mongol Empire and of China.' },
       { type: 'event',  text: 'The Fourth Lateran Council convenes in Rome under Pope Innocent III.' },
-      { type: 'event',  text: 'King John seals a charter of liberties at Runnymede — Magna Carta.' },
+      { type: 'event',  text: 'King John seals a charter of liberties at Runnymede - Magna Carta.' },
     ],
     reveal: [
       'Kublai Khan was born on 23 September 1215.',
@@ -96,7 +96,7 @@ const PUZZLES = [
       { type: 'event',  text: 'A fire rages for four days and destroys much of the City of London.',
         image: 'img/great-fire-london.jpg',
         alt: 'A night view of London engulfed in flames across the River Thames under a red sky.',
-        attribution: 'The Great Fire of London, unknown painter (c.1675) — public domain' },
+        attribution: 'The Great Fire of London, unknown painter (c.1675) - public domain' },
     ],
     reveal: [
       'Frans Hals was buried in September 1666.',
@@ -348,7 +348,7 @@ const PUZZLES = [
       { type: 'event', text: 'Napoleon crowns himself Emperor of the French.',
         image: 'img/coronation-1804.jpg',
         alt: 'A grand painting of Napoleon’s coronation in a cathedral, crowded with richly dressed figures.',
-        attribution: 'The Coronation of Napoleon, Jacques-Louis David (1807) — public domain' },
+        attribution: 'The Coronation of Napoleon, Jacques-Louis David (1807) - public domain' },
     ],
     reveal: [
       'Haiti declared independence on 1 January 1804.',
@@ -364,7 +364,7 @@ const PUZZLES = [
       { type: 'event', text: 'France’s July Revolution topples King Charles X.',
         image: 'img/liberty-1830.jpg',
         alt: 'A painting of a bare-breasted woman holding a tricolour flag and leading armed revolutionaries over a barricade.',
-        attribution: 'Liberty Leading the People, Eugène Delacroix (1830) — public domain' },
+        attribution: 'Liberty Leading the People, Eugène Delacroix (1830) - public domain' },
     ],
     reveal: [
       'The Liverpool & Manchester Railway opened on 15 September 1830.',
@@ -443,7 +443,7 @@ const PUZZLES = [
       { type: 'work',  text: 'Vincent van Gogh paints his Sunflowers in Arles.',
         image: 'img/sunflowers-1888.jpg',
         alt: 'A painting of a vase of bright yellow sunflowers against a yellow background.',
-        attribution: 'Sunflowers, Vincent van Gogh (1888) — public domain' },
+        attribution: 'Sunflowers, Vincent van Gogh (1888) - public domain' },
       { type: 'event', text: 'The Football League, the world’s first, is founded in England.' },
       { type: 'event', text: 'Kodak’s first roll-film camera goes on sale, bringing photography to the masses.' },
     ],

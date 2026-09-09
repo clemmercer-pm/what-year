@@ -1,4 +1,4 @@
-/* WHAT YEAR?? — core play loop + daily selection (Sessions 2–3).
+/* WHAT YEAR?? - core play loop + daily selection (Sessions 2–3).
    Session 3 adds: a deterministic daily puzzle (same for everyone, by date, no backend),
    a puzzle number, and per-day localStorage so a game in progress restores and a
    finished day stays finished. Share + streak/stats are still Session 5. */
@@ -11,7 +11,7 @@
   const MAX_BC = 6000;                      // generous lower bound
   const DAY_MS = 86400000;
 
-  // Puzzle No. 1 = this launch date. Provisional — re-pin at ship (Session 6)
+  // Puzzle No. 1 = this launch date. Provisional - re-pin at ship (Session 6)
   // once the real content order is set. Kept early so today shows a positive number.
   const EPOCH = { y: 2026, m: 8, d: 13 };
   const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -28,18 +28,18 @@
 
   function playDate() {
     // ?date=YYYY-MM-DD lets us preview any day locally. Anything malformed or
-    // not a real calendar date is ignored — we fall back to the actual today.
+    // not a real calendar date is ignored - we fall back to the actual today.
     const q = new URLSearchParams(location.search).get('date');
     if (!q) return today();
 
     const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(q);
-    if (!match) { console.warn('Ignoring ?date — expected YYYY-MM-DD, got:', q); return today(); }
+    if (!match) { console.warn('Ignoring ?date - expected YYYY-MM-DD, got:', q); return today(); }
 
     const y = +match[1], m = +match[2], d = +match[3];
     // Verify it round-trips to the same calendar date (rejects 2026-02-30, month 13, etc.).
     const test = new Date(Date.UTC(y, m - 1, d));
     const real = test.getUTCFullYear() === y && test.getUTCMonth() === m - 1 && test.getUTCDate() === d;
-    if (!real) { console.warn('Ignoring ?date — not a real date:', q); return today(); }
+    if (!real) { console.warn('Ignoring ?date - not a real date:', q); return today(); }
 
     return { y, m, d };
   }
@@ -53,7 +53,7 @@
   const puzzle = PUZZLES[puzzleIndex];
 
   const STORE_KEY = `whatyear:progress:${dateKey}`;
-  // Provisional GitHub Pages URL — confirm/finalise at deploy (Session 6 checklist).
+  // Provisional GitHub Pages URL - confirm/finalise at deploy (Session 6 checklist).
   const SHARE_URL = 'https://clemmercer-pm.github.io/what-year/';
 
   // --- state ---
@@ -70,7 +70,7 @@
       localStorage.setItem(STORE_KEY, JSON.stringify({
         guesses: state.guesses, finished: state.finished, won: state.won,
       }));
-    } catch (e) { /* private mode / storage off — game still plays, just won't persist */ }
+    } catch (e) { /* private mode / storage off - game still plays, just won't persist */ }
   }
   function load() {
     try {
@@ -99,7 +99,7 @@
     const score = state.won ? `${state.guesses.length}/${MAX_GUESSES}` : `X/${MAX_GUESSES}`;
     const mark = state.won ? '✅' : '❌';
     const grid = state.guesses.map(guessGlyph).join('');
-    return `WHAT YEAR?? No.${puzzleNumber} — ${score} ${mark}\n${grid}\n🔎 ${cluesUsed()}/${puzzle.clues.length} clues\n${SHARE_URL}`;
+    return `WHAT YEAR?? No.${puzzleNumber} - ${score} ${mark}\n${grid}\n🔎 ${cluesUsed()}/${puzzle.clues.length} clues\n${SHARE_URL}`;
   }
   function copyText(text) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -138,6 +138,9 @@
     endscreen: document.getElementById('endscreen'),
     guessCount: document.getElementById('guessCount'),
     eraBtns: Array.from(document.querySelectorAll('.era')),
+    helpBtn: document.getElementById('helpBtn'),
+    helpModal: document.getElementById('helpModal'),
+    helpClose: document.getElementById('helpClose'),
   };
 
   // --- rendering ---
@@ -221,7 +224,7 @@
           fb.appendChild(tag);
         }
         const dir = document.createElement('span');
-        dir.textContent = g.result === 'early' ? 'Too early — later ↑' : 'Too late — earlier ↓';
+        dir.textContent = g.result === 'early' ? 'Too early - later ↑' : 'Too late - earlier ↓';
         fb.appendChild(dir);
       }
       li.append(yr, fb);
@@ -278,8 +281,8 @@
     copyNote.setAttribute('aria-live', 'polite');
     copyBtn.addEventListener('click', () => {
       copyText(buildShareText())
-        .then(() => { copyNote.textContent = 'Copied — paste it into the group chat!'; })
-        .catch(() => { copyNote.textContent = 'Couldn’t copy automatically — long-press to select.'; });
+        .then(() => { copyNote.textContent = 'Copied - paste it into the group chat!'; })
+        .catch(() => { copyNote.textContent = 'Couldn’t copy automatically - long-press to select.'; });
     });
     share.append(grid, cluesLine, copyBtn, copyNote);
 
@@ -360,12 +363,30 @@
     if (!state.finished) el.input.focus();
   }
 
+  // --- how to play ---
+  const HELP_SEEN = 'whatyear:seenHelp';
+  const canModal = el.helpModal && typeof el.helpModal.showModal === 'function';
+  function openHelp() { if (canModal && !el.helpModal.open) el.helpModal.showModal(); }
+  function closeHelp() { if (canModal && el.helpModal.open) el.helpModal.close(); }
+
   // --- wire up ---
   el.eraBtns.forEach((b) => b.addEventListener('click', () => setEra(b.dataset.era)));
   el.guessBtn.addEventListener('click', submitGuess);
   el.input.addEventListener('keydown', (e) => { if (e.key === 'Enter') submitGuess(); });
+  if (el.helpBtn) el.helpBtn.addEventListener('click', openHelp);
+  if (el.helpClose) el.helpClose.addEventListener('click', closeHelp);
+  if (canModal) el.helpModal.addEventListener('click', (e) => { if (e.target === el.helpModal) closeHelp(); }); // backdrop click
 
   load();
   render();
-  if (!state.finished) el.input.focus();
+
+  // First visit: show the rules once.
+  let seenHelp = true;
+  try { seenHelp = !!localStorage.getItem(HELP_SEEN); } catch (e) { /* storage off */ }
+  if (!seenHelp) {
+    openHelp();
+    try { localStorage.setItem(HELP_SEEN, '1'); } catch (e) { /* ignore */ }
+  } else if (!state.finished) {
+    el.input.focus();
+  }
 })();

@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WHAT YEAR??</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="A daily history puzzle: three things from one year - guess the year.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⏳</text></svg>">
+  <link rel="stylesheet" href="styles.css?v=1">
 </head>
 <body>
   <main class="app">
+    <button type="button" id="helpBtn" class="help-btn" aria-label="How to play" title="How to play">?</button>
     <header class="masthead">
       <h1 class="logo">WHAT YEAR<span class="q">??</span></h1>
       <p class="tagline">Three things. One year. Name it.</p>
@@ -48,7 +51,19 @@
     </footer>
   </main>
 
-  <script src="puzzles.js"></script>
-  <script src="app.js"></script>
+  <dialog id="helpModal" class="help-modal">
+    <h2>How to play</h2>
+    <ul>
+      <li>You get <strong>three clues</strong> - each a different thing that happened in the <strong>same year</strong>.</li>
+      <li>Guess the <strong>exact year</strong>, using the <strong>BC / AD</strong> toggle.</li>
+      <li>You have <strong>6 guesses</strong>. A new clue unlocks on your <strong>3rd</strong> and <strong>5th</strong> guess.</li>
+      <li>Each guess tells you <strong>too early ↑</strong> or <strong>too late ↓</strong>, and if you’re in the <strong>right decade</strong>.</li>
+      <li>Then <strong>share your result</strong> - no spoilers. A new puzzle every day.</li>
+    </ul>
+    <button id="helpClose" class="copy-btn" type="button">Got it</button>
+  </dialog>
+
+  <script src="puzzles.js?v=1"></script>
+  <script src="app.js?v=1"></script>
 </body>
 </html>
