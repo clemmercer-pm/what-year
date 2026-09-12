@@ -674,4 +674,656 @@ const PUZZLES = [
       'The September 11 attacks occurred in 2001.',
     ],
   },
+
+  // ---- Batch 3 (51–100): independently reviewed; duplicate-anchor fixes applied ----
+  {
+    id: 51, year: 1453, era: 'AD',
+    clues: [
+      { type: 'event', text: 'England’s King Henry VI suffers the first bout of the madness that helps spark the Wars of the Roses.' },
+      { type: 'event', text: 'The Hundred Years’ War ends as France defeats England at the Battle of Castillon.' },
+      { type: 'event', text: 'Constantinople falls to the Ottomans, ending the Byzantine Empire.' },
+    ],
+    reveal: [
+      'Henry VI’s first mental collapse came in August 1453.',
+      'The Battle of Castillon was fought on 17 July 1453.',
+      'Constantinople fell on 29 May 1453.',
+    ],
+  },
+  {
+    id: 52, year: 1485, era: 'AD',
+    clues: [
+      { type: 'work',  text: 'William Caxton prints Sir Thomas Malory’s Le Morte d’Arthur.' },
+      { type: 'event', text: 'A mysterious “sweating sickness” breaks out in England for the first time.' },
+      { type: 'event', text: 'Henry Tudor defeats Richard III at Bosworth, ending the Wars of the Roses.' },
+    ],
+    reveal: [
+      'Caxton printed Le Morte d’Arthur in 1485.',
+      'The first sweating-sickness epidemic struck England in 1485.',
+      'The Battle of Bosworth was fought on 22 August 1485.',
+    ],
+  },
+  {
+    id: 53, year: 1520, era: 'AD',
+    clues: [
+      { type: 'death', text: 'The painter Raphael dies young in Rome.' },
+      { type: 'event', text: 'Suleiman the Magnificent becomes ruler of the Ottoman Empire.' },
+      { type: 'event', text: 'Henry VIII and Francis I of France meet in splendour at the Field of the Cloth of Gold.' },
+    ],
+    reveal: [
+      'Raphael died on 6 April 1520.',
+      'Suleiman the Magnificent acceded in 1520.',
+      'The Field of the Cloth of Gold took place in June 1520.',
+    ],
+  },
+  {
+    id: 54, year: 1521, era: 'AD',
+    clues: [
+      { type: 'event', text: 'Martin Luther refuses to recant his writings at the Diet of Worms.' },
+      { type: 'death', text: 'The explorer Ferdinand Magellan is killed in the Philippines.' },
+      { type: 'event', text: 'Cortés and his allies capture the Aztec capital, Tenochtitlan.' },
+    ],
+    reveal: [
+      'The Diet of Worms confronted Luther in April 1521.',
+      'Magellan was killed on 27 April 1521.',
+      'Tenochtitlan fell in August 1521.',
+    ],
+  },
+  {
+    id: 55, year: 1533, era: 'AD',
+    clues: [
+      { type: 'event',  text: 'Ivan the Terrible becomes ruler of Russia as a three-year-old boy.' },
+      { type: 'person', text: 'The future Elizabeth I is born to Anne Boleyn.' },
+      { type: 'event',  text: 'Henry VIII secretly marries Anne Boleyn.' },
+    ],
+    reveal: [
+      'Ivan IV became Grand Prince of Moscow in 1533.',
+      'Elizabeth I was born on 7 September 1533.',
+      'Henry VIII married Anne Boleyn in January 1533.',
+    ],
+  },
+  {
+    id: 56, year: 1547, era: 'AD',
+    clues: [
+      { type: 'event',  text: 'Ivan the Terrible is crowned the first Tsar of all Russia.' },
+      { type: 'person', text: 'Miguel de Cervantes, future author of Don Quixote, is born in Spain.' },
+      { type: 'death',  text: 'Henry VIII of England dies.' },
+    ],
+    reveal: [
+      'Ivan IV was crowned Tsar in January 1547.',
+      'Cervantes was born in 1547.',
+      'Henry VIII died on 28 January 1547.',
+    ],
+  },
+  {
+    id: 57, year: 1558, era: 'AD',
+    clues: [
+      { type: 'event', text: 'England loses Calais, its last foothold on the European mainland.' },
+      { type: 'death', text: 'The Holy Roman Emperor Charles V dies in a Spanish monastery.' },
+      { type: 'event', text: 'Elizabeth I becomes Queen of England.' },
+    ],
+    reveal: [
+      'Calais was lost to France in January 1558.',
+      'Charles V died on 21 September 1558.',
+      'Elizabeth I acceded on 17 November 1558.',
+    ],
+  },
+  {
+    id: 58, year: 1588, era: 'AD',
+    clues: [
+      { type: 'person', text: 'Thomas Hobbes, future author of Leviathan, is born in England.' },
+      { type: 'event',  text: 'In France, King Henri III has the powerful Duke of Guise assassinated.' },
+      { type: 'event',  text: 'The Spanish Armada is defeated by England.' },
+    ],
+    reveal: [
+      'Thomas Hobbes was born on 5 April 1588.',
+      'The Duke of Guise was assassinated on 23 December 1588.',
+      'The Spanish Armada was defeated in the summer of 1588.',
+    ],
+  },
+  {
+    id: 59, year: 1603, era: 'AD',
+    clues: [
+      { type: 'event', text: 'Tokugawa Ieyasu is named shogun, beginning over 250 years of Tokugawa rule in Japan.' },
+      { type: 'death', text: 'Queen Elizabeth I dies, ending the Tudor dynasty.' },
+      { type: 'event', text: 'James VI of Scotland also becomes James I of England, uniting the crowns.' },
+    ],
+    reveal: [
+      'The Tokugawa shogunate began in 1603.',
+      'Elizabeth I died on 24 March 1603.',
+      'The Union of the Crowns took place in 1603.',
+    ],
+  },
+  {
+    id: 60, year: 1610, era: 'AD',
+    clues: [
+      { type: 'work',  text: 'Galileo publishes Sidereus Nuncius, revealing Jupiter’s moons through his telescope.' },
+      { type: 'death', text: 'King Henri IV of France is assassinated in Paris.' },
+      { type: 'event', text: 'Henry Hudson explores the great North American bay that now bears his name.' },
+    ],
+    reveal: [
+      'Sidereus Nuncius was published in 1610.',
+      'Henri IV was assassinated on 14 May 1610.',
+      'Hudson explored Hudson Bay in 1610.',
+    ],
+  },
+  {
+    id: 61, year: 1642, era: 'AD',
+    clues: [
+      { type: 'death',  text: 'Galileo Galilei dies under house arrest in Italy.' },
+      { type: 'person', text: 'Isaac Newton is born in England (by the old calendar, on Christmas Day).' },
+      { type: 'event',  text: 'The English Civil War breaks out between King and Parliament.' },
+    ],
+    reveal: [
+      'Galileo died on 8 January 1642.',
+      'Newton was born on 25 December 1642 (Old Style).',
+      'The English Civil War began in August 1642.',
+    ],
+  },
+  {
+    id: 62, year: 1649, era: 'AD',
+    clues: [
+      { type: 'event', text: 'The Maryland colony passes an early law promising religious toleration.' },
+      { type: 'event', text: 'Cromwell’s forces storm the Irish town of Drogheda.' },
+      { type: 'death', text: 'King Charles I is beheaded outside his palace in London.' },
+    ],
+    reveal: [
+      'The Maryland Toleration Act passed in April 1649.',
+      'The Storming of Drogheda took place in September 1649.',
+      'Charles I was beheaded on 30 January 1649.',
+    ],
+  },
+  {
+    id: 63, year: 1688, era: 'AD',
+    clues: [
+      { type: 'work',  text: 'Aphra Behn, one of the first professional women writers in English, publishes Oroonoko.' },
+      { type: 'event', text: 'Seven bishops are put on trial and acquitted for defying the King.' },
+      { type: 'event', text: 'The “Glorious Revolution” puts William and Mary on the English throne.' },
+    ],
+    reveal: [
+      'Oroonoko was published in 1688.',
+      'The Seven Bishops were tried and acquitted in June 1688.',
+      'The Glorious Revolution took place in 1688.',
+    ],
+  },
+  {
+    id: 64, year: 1707, era: 'AD',
+    clues: [
+      { type: 'person', text: 'Henry Fielding, future author of Tom Jones, is born in England.' },
+      { type: 'event',  text: 'Mount Fuji erupts in Japan for the last time in recorded history.' },
+      { type: 'event',  text: 'The Acts of Union join England and Scotland into the Kingdom of Great Britain.' },
+    ],
+    reveal: [
+      'Henry Fielding was born on 22 April 1707.',
+      'The Hōei eruption of Mount Fuji occurred in December 1707.',
+      'The Acts of Union took effect on 1 May 1707.',
+    ],
+  },
+  {
+    id: 65, year: 1755, era: 'AD',
+    clues: [
+      { type: 'person', text: 'Marie Antoinette, a future queen of France, is born in Austria.' },
+      { type: 'work',  text: 'Samuel Johnson publishes his great Dictionary of the English Language.' },
+      { type: 'event',  text: 'A catastrophic earthquake and tsunami destroy Lisbon.' },
+    ],
+    reveal: [
+      'Marie Antoinette was born on 2 November 1755.',
+      'Johnson’s Dictionary was published in April 1755.',
+      'The Lisbon earthquake struck on 1 November 1755.',
+    ],
+  },
+  {
+    id: 66, year: 1759, era: 'AD',
+    clues: [
+      { type: 'work',  text: 'Voltaire publishes his satirical novel Candide.' },
+      { type: 'event', text: 'The British Museum opens to the public in London.' },
+      { type: 'event', text: 'Britain takes Quebec as General Wolfe dies in the moment of victory.' },
+    ],
+    reveal: [
+      'Candide was published in 1759.',
+      'The British Museum opened in January 1759.',
+      'The Battle of the Plains of Abraham was fought on 13 September 1759.',
+    ],
+  },
+  {
+    id: 67, year: 1769, era: 'AD',
+    clues: [
+      { type: 'event',  text: 'James Watt patents a greatly improved steam engine.' },
+      { type: 'person', text: 'The future Duke of Wellington is born, the same year as the man he will one day defeat.' },
+      { type: 'person', text: 'Napoleon Bonaparte is born on the island of Corsica.' },
+    ],
+    reveal: [
+      'Watt patented his steam engine in 1769.',
+      'The Duke of Wellington was born in 1769.',
+      'Napoleon was born on 15 August 1769.',
+    ],
+  },
+  {
+    id: 68, year: 1781, era: 'AD',
+    clues: [
+      { type: 'event', text: 'William Herschel discovers the planet Uranus.' },
+      { type: 'work',  text: 'Immanuel Kant publishes his Critique of Pure Reason.' },
+      { type: 'event', text: 'British forces surrender at Yorktown, effectively ending the American Revolutionary War.' },
+    ],
+    reveal: [
+      'Uranus was discovered on 13 March 1781.',
+      'The Critique of Pure Reason appeared in 1781.',
+      'The surrender at Yorktown came in October 1781.',
+    ],
+  },
+  {
+    id: 69, year: 1799, era: 'AD',
+    clues: [
+      { type: 'event', text: 'French soldiers in Egypt unearth the Rosetta Stone.' },
+      { type: 'death', text: 'George Washington dies at his home, Mount Vernon.' },
+      { type: 'event', text: 'Napoleon seizes power in France in a coup.' },
+    ],
+    reveal: [
+      'The Rosetta Stone was found in 1799.',
+      'Washington died on 14 December 1799.',
+      'The Coup of 18 Brumaire came in November 1799.',
+    ],
+  },
+  {
+    id: 70, year: 1805, era: 'AD',
+    clues: [
+      { type: 'person', text: 'Hans Christian Andersen, future author of fairy tales, is born in Denmark.' },
+      { type: 'event',  text: 'Napoleon crushes the Austrians and Russians at the Battle of Austerlitz.' },
+      { type: 'death',  text: 'Admiral Nelson dies defeating the French and Spanish fleets at Trafalgar.' },
+    ],
+    reveal: [
+      'Hans Christian Andersen was born on 2 April 1805.',
+      'The Battle of Austerlitz was fought on 2 December 1805.',
+      'The Battle of Trafalgar was fought on 21 October 1805.',
+    ],
+  },
+  {
+    id: 71, year: 1812, era: 'AD',
+    clues: [
+      { type: 'person', text: 'Charles Dickens is born in England.' },
+      { type: 'event',  text: 'Britain and the United States go to war once again.' },
+      { type: 'event',  text: 'Napoleon’s Grande Armée invades Russia and is destroyed by winter and retreat.' },
+    ],
+    reveal: [
+      'Charles Dickens was born on 7 February 1812.',
+      'The War of 1812 began in June 1812.',
+      'The French invasion of Russia took place in 1812.',
+    ],
+  },
+  {
+    id: 72, year: 1819, era: 'AD',
+    clues: [
+      { type: 'work',   text: 'The poet John Keats writes a series of his greatest odes.' },
+      { type: 'event',  text: 'Cavalry charge a peaceful reform crowd at Peterloo in Manchester.' },
+      { type: 'person', text: 'The future Queen Victoria is born.' },
+    ],
+    reveal: [
+      'Keats wrote his great odes in 1819.',
+      'The Peterloo Massacre took place on 16 August 1819.',
+      'Victoria was born on 24 May 1819.',
+    ],
+  },
+  {
+    id: 73, year: 1840, era: 'AD',
+    clues: [
+      { type: 'event', text: 'Māori chiefs and the British Crown sign the Treaty of Waitangi in New Zealand.' },
+      { type: 'event', text: 'Britain issues the world’s first adhesive postage stamp, the Penny Black.' },
+      { type: 'event', text: 'Queen Victoria marries Prince Albert.' },
+    ],
+    reveal: [
+      'The Treaty of Waitangi was signed on 6 February 1840.',
+      'The Penny Black went into use in May 1840.',
+      'Victoria and Albert married on 10 February 1840.',
+    ],
+  },
+  {
+    id: 74, year: 1851, era: 'AD',
+    clues: [
+      { type: 'event', text: 'The New York Times publishes its first edition.' },
+      { type: 'work',  text: 'Herman Melville publishes his novel Moby-Dick.' },
+      { type: 'event', text: 'London’s Great Exhibition opens in the Crystal Palace.' },
+    ],
+    reveal: [
+      'The first New York Times edition appeared on 18 September 1851.',
+      'Moby-Dick was published in 1851.',
+      'The Great Exhibition opened on 1 May 1851.',
+    ],
+  },
+  {
+    id: 75, year: 1867, era: 'AD',
+    clues: [
+      { type: 'event', text: 'Alfred Nobel patents dynamite.' },
+      { type: 'work',  text: 'Karl Marx publishes the first volume of Das Kapital.' },
+      { type: 'event', text: 'Canada becomes a self-governing dominion.' },
+    ],
+    reveal: [
+      'Dynamite was patented in 1867.',
+      'The first volume of Das Kapital appeared in 1867.',
+      'Canadian Confederation took effect on 1 July 1867.',
+    ],
+  },
+  {
+    id: 76, year: 1869, era: 'AD',
+    clues: [
+      { type: 'work',  text: 'Dmitri Mendeleev presents the first periodic table of the elements.' },
+      { type: 'event', text: 'The Suez Canal opens, linking the Mediterranean and the Red Sea.' },
+      { type: 'event', text: 'The first railroad across the United States is completed.' },
+    ],
+    reveal: [
+      'Mendeleev presented the periodic table in 1869.',
+      'The Suez Canal opened in November 1869.',
+      'The US transcontinental railroad was completed on 10 May 1869.',
+    ],
+  },
+  {
+    id: 77, year: 1871, era: 'AD',
+    clues: [
+      { type: 'event', text: 'The journalist Henry Stanley finds the missing explorer David Livingstone in Africa.' },
+      { type: 'event', text: 'A great fire destroys much of Chicago.' },
+      { type: 'event', text: 'The German Empire is proclaimed in the Hall of Mirrors at Versailles.' },
+    ],
+    reveal: [
+      'Stanley found Livingstone in November 1871.',
+      'The Great Chicago Fire broke out in October 1871.',
+      'The German Empire was proclaimed on 18 January 1871.',
+    ],
+  },
+  {
+    id: 78, year: 1889, era: 'AD',
+    clues: [
+      { type: 'person', text: 'The comic actor Charlie Chaplin is born in London.' },
+      { type: 'work',   text: 'Vincent van Gogh paints The Starry Night.' },
+      { type: 'event',  text: 'Gustave Eiffel’s tower is completed for the Paris World’s Fair.' },
+    ],
+    reveal: [
+      'Charlie Chaplin was born on 16 April 1889.',
+      'Van Gogh painted The Starry Night in 1889.',
+      'The Eiffel Tower was completed in March 1889.',
+    ],
+  },
+  {
+    id: 79, year: 1893, era: 'AD',
+    clues: [
+      { type: 'death', text: 'The composer Pyotr Ilyich Tchaikovsky dies in Russia.' },
+      { type: 'event', text: 'New Zealand becomes the first country to grant women the vote.' },
+      { type: 'event', text: 'A great World’s Fair, the Columbian Exposition, opens in Chicago.' },
+    ],
+    reveal: [
+      'Tchaikovsky died on 6 November 1893.',
+      'New Zealand granted women the vote on 19 September 1893.',
+      'The World’s Columbian Exposition opened in 1893.',
+    ],
+  },
+  {
+    id: 80, year: 1903, era: 'AD',
+    clues: [
+      { type: 'event', text: 'The first Tour de France cycling race is held.' },
+      { type: 'event', text: 'Henry Ford founds the Ford Motor Company.' },
+      { type: 'event', text: 'The Wright brothers make the first powered aeroplane flight.' },
+    ],
+    reveal: [
+      'The first Tour de France was held in July 1903.',
+      'The Ford Motor Company was founded in June 1903.',
+      'The Wright brothers flew on 17 December 1903.',
+    ],
+  },
+  {
+    id: 81, year: 1905, era: 'AD',
+    clues: [
+      { type: 'event', text: 'A failed revolution shakes Tsar Nicholas II’s rule in Russia.' },
+      { type: 'event', text: 'Norway peacefully gains independence from Sweden.' },
+      { type: 'work',  text: 'Einstein publishes the theory of special relativity in his “miracle year”.' },
+    ],
+    reveal: [
+      'The Russian Revolution of 1905 shook the Tsar’s rule.',
+      'Norway gained independence in 1905.',
+      'Einstein’s “miracle year” papers appeared in 1905.',
+    ],
+  },
+  {
+    id: 82, year: 1914, era: 'AD',
+    clues: [
+      { type: 'event', text: 'The Panama Canal opens to shipping.' },
+      { type: 'death', text: 'Archduke Franz Ferdinand is assassinated in Sarajevo.' },
+      { type: 'event', text: 'The First World War begins.' },
+    ],
+    reveal: [
+      'The Panama Canal opened in August 1914.',
+      'Franz Ferdinand was assassinated on 28 June 1914.',
+      'The First World War began in 1914.',
+    ],
+  },
+  {
+    id: 83, year: 1917, era: 'AD',
+    clues: [
+      { type: 'event', text: 'Britain’s Balfour Declaration backs a Jewish homeland in Palestine.' },
+      { type: 'event', text: 'The United States enters the First World War.' },
+      { type: 'event', text: 'The Bolsheviks seize power in the Russian Revolution.' },
+    ],
+    reveal: [
+      'The Balfour Declaration was issued in November 1917.',
+      'The US entered the war in April 1917.',
+      'The October Revolution took place in 1917.',
+    ],
+  },
+  {
+    id: 84, year: 1920, era: 'AD',
+    clues: [
+      { type: 'event', text: 'The League of Nations holds its first meeting.' },
+      { type: 'event', text: 'American women win the right to vote.' },
+      { type: 'event', text: 'Prohibition, banning alcohol, begins in the United States.' },
+    ],
+    reveal: [
+      'The League of Nations first met in 1920.',
+      'The 19th Amendment took effect in August 1920.',
+      'Prohibition began in January 1920.',
+    ],
+  },
+  {
+    id: 85, year: 1924, era: 'AD',
+    clues: [
+      { type: 'work',  text: 'George Gershwin premieres his composition Rhapsody in Blue.' },
+      { type: 'death', text: 'The Soviet leader Vladimir Lenin dies.' },
+      { type: 'event', text: 'The first Winter Olympic Games are held, in France.' },
+    ],
+    reveal: [
+      'Rhapsody in Blue premiered in February 1924.',
+      'Lenin died on 21 January 1924.',
+      'The first Winter Olympics were held in 1924.',
+    ],
+  },
+  {
+    id: 86, year: 1929, era: 'AD',
+    clues: [
+      { type: 'person', text: 'Anne Frank, whose wartime diary will become famous, is born.' },
+      { type: 'event',  text: 'The very first Academy Awards are presented in Hollywood.' },
+      { type: 'event',  text: 'The Wall Street Crash triggers the Great Depression.' },
+    ],
+    reveal: [
+      'Anne Frank was born on 12 June 1929.',
+      'The first Academy Awards were held in May 1929.',
+      'The Wall Street Crash came in October 1929.',
+    ],
+  },
+  {
+    id: 87, year: 1933, era: 'AD',
+    clues: [
+      { type: 'work',  text: 'The film King Kong premieres.' },
+      { type: 'event', text: 'Prohibition on alcohol ends in the United States.' },
+      { type: 'event', text: 'Adolf Hitler becomes Chancellor of Germany.' },
+    ],
+    reveal: [
+      'King Kong premiered in 1933.',
+      'Prohibition was repealed in December 1933.',
+      'Hitler became Chancellor on 30 January 1933.',
+    ],
+  },
+  {
+    id: 88, year: 1939, era: 'AD',
+    clues: [
+      { type: 'work',  text: 'The films The Wizard of Oz and Gone with the Wind are released.' },
+      { type: 'event', text: 'The New York World’s Fair opens to huge crowds.' },
+      { type: 'event', text: 'Germany invades Poland, beginning the Second World War in Europe.' },
+    ],
+    reveal: [
+      'Both landmark films were released in 1939.',
+      'The New York World’s Fair opened in April 1939.',
+      'Germany invaded Poland on 1 September 1939.',
+    ],
+  },
+  {
+    id: 89, year: 1941, era: 'AD',
+    clues: [
+      { type: 'work',  text: 'Orson Welles releases his film Citizen Kane.' },
+      { type: 'event', text: 'Germany launches a massive surprise invasion of the Soviet Union.' },
+      { type: 'event', text: 'Japan attacks Pearl Harbor, bringing the United States into the war.' },
+    ],
+    reveal: [
+      'Citizen Kane was released in 1941.',
+      'Operation Barbarossa began in June 1941.',
+      'Pearl Harbor was attacked on 7 December 1941.',
+    ],
+  },
+  {
+    id: 90, year: 1948, era: 'AD',
+    clues: [
+      { type: 'death', text: 'Mahatma Gandhi is assassinated in India.' },
+      { type: 'event', text: 'Britain founds the National Health Service.' },
+      { type: 'event', text: 'The state of Israel is established.' },
+    ],
+    reveal: [
+      'Gandhi was assassinated on 30 January 1948.',
+      'The NHS was founded on 5 July 1948.',
+      'Israel was established on 14 May 1948.',
+    ],
+  },
+  {
+    id: 91, year: 1954, era: 'AD',
+    clues: [
+      { type: 'work',  text: 'J.R.R. Tolkien publishes the first volume of The Lord of the Rings.' },
+      { type: 'event', text: 'The US Supreme Court outlaws school segregation in Brown v. Board of Education.' },
+      { type: 'event', text: 'Roger Bannister runs the first sub-four-minute mile.' },
+    ],
+    reveal: [
+      'The Fellowship of the Ring was published in 1954.',
+      'Brown v. Board was decided in May 1954.',
+      'Bannister ran the four-minute mile on 6 May 1954.',
+    ],
+  },
+  {
+    id: 92, year: 1959, era: 'AD',
+    clues: [
+      { type: 'event', text: 'The Barbie doll goes on sale for the first time.' },
+      { type: 'event', text: 'Alaska and Hawaii become the 49th and 50th US states.' },
+      { type: 'event', text: 'Fidel Castro’s revolutionaries seize power in Cuba.' },
+    ],
+    reveal: [
+      'Barbie launched in March 1959.',
+      'Alaska and Hawaii became states in 1959.',
+      'The Cuban Revolution triumphed in January 1959.',
+    ],
+  },
+  {
+    id: 93, year: 1962, era: 'AD',
+    clues: [
+      { type: 'work',  text: 'The first James Bond film, Dr. No, premieres.' },
+      { type: 'work',  text: 'The Beatles release their first single, Love Me Do.' },
+      { type: 'event', text: 'The Cuban Missile Crisis brings the world to the brink of nuclear war.' },
+    ],
+    reveal: [
+      'Dr. No premiered in October 1962.',
+      'Love Me Do was released in October 1962.',
+      'The Cuban Missile Crisis unfolded in October 1962.',
+    ],
+  },
+  {
+    id: 94, year: 1966, era: 'AD',
+    clues: [
+      { type: 'work',  text: 'The television series Star Trek airs its first episode.' },
+      { type: 'event', text: 'Mao launches the Cultural Revolution in China.' },
+      { type: 'event', text: 'England win football’s World Cup at Wembley.' },
+    ],
+    reveal: [
+      'Star Trek premiered in September 1966.',
+      'The Cultural Revolution began in 1966.',
+      'England won the World Cup on 30 July 1966.',
+    ],
+  },
+  {
+    id: 95, year: 1968, era: 'AD',
+    clues: [
+      { type: 'event', text: 'The “Prague Spring” reform movement is crushed by Soviet tanks.' },
+      { type: 'death', text: 'Senator Robert F. Kennedy is assassinated.' },
+      { type: 'death', text: 'The civil-rights leader Martin Luther King Jr. is assassinated.' },
+    ],
+    reveal: [
+      'The Prague Spring was crushed in August 1968.',
+      'Robert F. Kennedy was assassinated on 6 June 1968.',
+      'Martin Luther King Jr. was assassinated on 4 April 1968.',
+    ],
+  },
+  {
+    id: 96, year: 1972, era: 'AD',
+    clues: [
+      { type: 'event', text: 'A break-in at the Watergate complex begins a scandal that will topple a US president.' },
+      { type: 'event', text: 'Palestinian militants attack Israeli athletes at the Munich Olympics.' },
+      { type: 'event', text: 'Apollo 17 makes the last crewed landing on the Moon.' },
+    ],
+    reveal: [
+      'The Watergate break-in took place in June 1972.',
+      'The Munich Olympics attack came in September 1972.',
+      'Apollo 17 landed on the Moon in December 1972.',
+    ],
+  },
+  {
+    id: 97, year: 1977, era: 'AD',
+    clues: [
+      { type: 'work',  text: 'The first Star Wars film is released.' },
+      { type: 'death', text: 'Elvis Presley dies at his Graceland home.' },
+      { type: 'event', text: 'Queen Elizabeth II celebrates her Silver Jubilee.' },
+    ],
+    reveal: [
+      'Star Wars was released in May 1977.',
+      'Elvis Presley died on 16 August 1977.',
+      'The Silver Jubilee was celebrated in 1977.',
+    ],
+  },
+  {
+    id: 98, year: 1981, era: 'AD',
+    clues: [
+      { type: 'event', text: 'The music channel MTV launches in the United States.' },
+      { type: 'event', text: 'NASA launches the first reusable Space Shuttle.' },
+      { type: 'event', text: 'Charles and Diana marry at St Paul’s Cathedral.' },
+    ],
+    reveal: [
+      'MTV launched on 1 August 1981.',
+      'The first Space Shuttle flew in April 1981.',
+      'The royal wedding took place on 29 July 1981.',
+    ],
+  },
+  {
+    id: 99, year: 1998, era: 'AD',
+    clues: [
+      { type: 'event', text: 'Two students found the search engine Google.' },
+      { type: 'event', text: 'Northern Ireland’s Good Friday Agreement is signed.' },
+      { type: 'event', text: 'France win football’s World Cup on home soil.' },
+    ],
+    reveal: [
+      'Google was founded in September 1998.',
+      'The Good Friday Agreement was signed on 10 April 1998.',
+      'France won the World Cup in July 1998.',
+    ],
+  },
+  {
+    id: 100, year: 2012, era: 'AD',
+    clues: [
+      { type: 'event', text: 'Physicists announce the discovery of the Higgs boson.' },
+      { type: 'event', text: 'NASA’s Curiosity rover lands on Mars.' },
+      { type: 'event', text: 'London hosts the Summer Olympic Games.' },
+    ],
+    reveal: [
+      'The Higgs boson discovery was announced in July 2012.',
+      'Curiosity landed on Mars in August 2012.',
+      'The London Olympics were held in July and August 2012.',
+    ],
+  },
 ];

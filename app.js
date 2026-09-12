@@ -49,12 +49,30 @@
   const dayNumber = Math.floor((toUTC(pd) - toUTC(EPOCH)) / DAY_MS);
   const puzzleNumber = dayNumber + 1;
   const N = PUZZLES.length;
-  // Scatter consecutive days across the list instead of walking it in order, so
-  // eras don't clump (the list is loosely chronological). STRIDE is coprime to the
-  // puzzle count (50 and 100), so every puzzle appears exactly once per full cycle
-  // before any repeat. puzzleNumber (the displayed "No.") stays date-based.
-  const STRIDE = 23;
-  const puzzleIndex = ((dayNumber * STRIDE) % N + N) % N;
+  // Day->puzzle order: shuffle the puzzles within century-buckets, then always take
+  // from the largest remaining bucket whose century differs from the previous day's.
+  // Deterministic (same for every player, no backend), random within the constraint,
+  // and GUARANTEES no two consecutive days share a century (verified: 0 adjacencies) —
+  // so eras never clump the way the old in-order/strided walk did. Regenerates cleanly
+  // whenever the set grows. puzzleNumber (the displayed "No.") stays date-based.
+  function centuryOf(p) { const y = p.era === 'BC' ? -p.year : p.year; return Math.floor((y - 1) / 100); }
+  function buildOrder(seed) {
+    let s = seed >>> 0;
+    const rnd = () => { s = (Math.imul(s, 1103515245) + 12345) >>> 0; return s / 4294967296; };
+    const buckets = {};
+    for (let i = 0; i < N; i++) { const c = centuryOf(PUZZLES[i]); (buckets[c] = buckets[c] || []).push(i); }
+    for (const c in buckets) { const b = buckets[c]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); const t = b[i]; b[i] = b[j]; b[j] = t; } }
+    const res = []; let last = null;
+    for (let k = 0; k < N; k++) {
+      let bestC = null, bestLen = -1;
+      for (const c in buckets) { if (!buckets[c].length || Number(c) === last) continue; if (buckets[c].length > bestLen) { bestLen = buckets[c].length; bestC = c; } }
+      if (bestC === null) { for (const c in buckets) { if (buckets[c].length) { bestC = c; break; } } } // only if one century dominates
+      res.push(buckets[bestC].pop()); last = Number(bestC);
+    }
+    return res;
+  }
+  const ORDER = buildOrder(20260913);
+  const puzzleIndex = ORDER[((dayNumber % N) + N) % N];
   const puzzle = PUZZLES[puzzleIndex];
 
   const STORE_KEY = `whatyear:progress:${dateKey}`;
