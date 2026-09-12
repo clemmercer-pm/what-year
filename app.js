@@ -49,7 +49,12 @@
   const dayNumber = Math.floor((toUTC(pd) - toUTC(EPOCH)) / DAY_MS);
   const puzzleNumber = dayNumber + 1;
   const N = PUZZLES.length;
-  const puzzleIndex = ((puzzleNumber - 1) % N + N) % N; // safe modulo, wraps for any integer
+  // Scatter consecutive days across the list instead of walking it in order, so
+  // eras don't clump (the list is loosely chronological). STRIDE is coprime to the
+  // puzzle count (50 and 100), so every puzzle appears exactly once per full cycle
+  // before any repeat. puzzleNumber (the displayed "No.") stays date-based.
+  const STRIDE = 23;
+  const puzzleIndex = ((dayNumber * STRIDE) % N + N) % N;
   const puzzle = PUZZLES[puzzleIndex];
 
   const STORE_KEY = `whatyear:progress:${dateKey}`;
@@ -68,7 +73,7 @@
   function save() {
     try {
       localStorage.setItem(STORE_KEY, JSON.stringify({
-        guesses: state.guesses, finished: state.finished, won: state.won,
+        puzzleId: puzzle.id, guesses: state.guesses, finished: state.finished, won: state.won,
       }));
     } catch (e) { /* private mode / storage off - game still plays, just won't persist */ }
   }
@@ -77,6 +82,9 @@
       const raw = localStorage.getItem(STORE_KEY);
       if (!raw) return;
       const s = JSON.parse(raw);
+      // If the saved progress was for a different puzzle (e.g. the day→puzzle
+      // mapping changed), ignore it and start fresh rather than show a mismatch.
+      if (s && s.puzzleId !== undefined && s.puzzleId !== puzzle.id) return;
       if (s && Array.isArray(s.guesses)) {
         state.guesses = s.guesses;
         state.finished = !!s.finished;
