@@ -5,7 +5,8 @@ A deliberately strict, maintainable bright line so the content set can be stocke
 
 - **Only paintings / artworks that are unambiguously public domain** — in practice, works whose creator died over 100 years ago (pre-~1900). These are PD worldwide with no fuss.
 - **No photographs. No maps. No engravings of uncertain date. No CC-licensed anything.** If there's *any* rights question, it doesn't go in.
-- Every image's licence is confirmed as **"Public domain"** via the Wikimedia Commons API before download, and attribution (artist + work + year) is stored on the puzzle as good practice.
+- Every image's licence is confirmed as **"Public domain"** via the Wikimedia Commons API before download.
+- **The on-screen `attribution` caption must NOT contain the year** — the caption is visible during play, so a year there spoils the answer. Use "Title by Artist (public domain)" only. (The provenance year lives in this manifest, not on the puzzle.)
 - Natural consequence: **image clues skew to older puzzles** (there's a PD painting of the Great Fire but not of the Moon landing). Modern events are **text-only**. That's fine — aim for a pleasant text/painting *balance*, not an image on every puzzle.
 
 ## In use / wired up

@@ -28,7 +28,7 @@ const PUZZLES = [
       { type: 'event',  text: 'A Paris mob storms the Bastille, igniting the French Revolution.',
         image: 'img/bastille.jpg',
         alt: 'A crowd of armed figures storming the Bastille fortress in Paris amid smoke.',
-        attribution: 'Storming of the Bastille, Jean-Pierre Houël (1789) - public domain' },
+        attribution: 'The Storming of the Bastille by Jean-Pierre Houël (public domain)' },
     ],
     reveal: [
       'James Fenimore Cooper was born on 15 September 1789.',
@@ -96,7 +96,7 @@ const PUZZLES = [
       { type: 'event',  text: 'A fire rages for four days and destroys much of the City of London.',
         image: 'img/great-fire-london.jpg',
         alt: 'A night view of London engulfed in flames across the River Thames under a red sky.',
-        attribution: 'The Great Fire of London, unknown painter (c.1675) - public domain' },
+        attribution: 'The Great Fire of London, unknown painter (public domain)' },
     ],
     reveal: [
       'Frans Hals was buried in September 1666.',
@@ -348,7 +348,7 @@ const PUZZLES = [
       { type: 'event', text: 'Napoleon crowns himself Emperor of the French.',
         image: 'img/coronation-1804.jpg',
         alt: 'A grand painting of Napoleon’s coronation in a cathedral, crowded with richly dressed figures.',
-        attribution: 'The Coronation of Napoleon, Jacques-Louis David (1807) - public domain' },
+        attribution: 'The Coronation of Napoleon by Jacques-Louis David (public domain)' },
     ],
     reveal: [
       'Haiti declared independence on 1 January 1804.',
@@ -364,7 +364,7 @@ const PUZZLES = [
       { type: 'event', text: 'France’s July Revolution topples King Charles X.',
         image: 'img/liberty-1830.jpg',
         alt: 'A painting of a bare-breasted woman holding a tricolour flag and leading armed revolutionaries over a barricade.',
-        attribution: 'Liberty Leading the People, Eugène Delacroix (1830) - public domain' },
+        attribution: 'Liberty Leading the People by Eugène Delacroix (public domain)' },
     ],
     reveal: [
       'The Liverpool & Manchester Railway opened on 15 September 1830.',
@@ -443,7 +443,7 @@ const PUZZLES = [
       { type: 'work',  text: 'Vincent van Gogh paints his Sunflowers in Arles.',
         image: 'img/sunflowers-1888.jpg',
         alt: 'A painting of a vase of bright yellow sunflowers against a yellow background.',
-        attribution: 'Sunflowers, Vincent van Gogh (1888) - public domain' },
+        attribution: 'Sunflowers by Vincent van Gogh (public domain)' },
       { type: 'event', text: 'The Football League, the world’s first, is founded in England.' },
       { type: 'event', text: 'Kodak’s first roll-film camera goes on sale, bringing photography to the masses.' },
     ],
